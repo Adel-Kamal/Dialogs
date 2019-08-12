@@ -47,7 +47,7 @@ public class Dialogs(context: Context) : Dialog(context) {
         builder.setNeutralButton(NeutralButton) { dialog, wich -> }
         val dialog: AlertDialog = builder.create()
         dialog.show()
-    }
+    }//a
 
     fun D2(context: Context, vi: Int) {
 
