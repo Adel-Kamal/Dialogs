@@ -21,14 +21,6 @@ public class Dialogs(context: Context) : Dialog(context) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.normal)
-
-        Normal_Yes.setOnClickListener() {
-            Normal_7amada.text = "He Say Yes!!"
-        }
-
-        Normal_No.setOnClickListener() {
-            Normal_7amada.text = "He Say No!!"
-        }
     }
 
     fun D1(
@@ -49,13 +41,19 @@ public class Dialogs(context: Context) : Dialog(context) {
         dialog.show()
     }//a
 
-    fun D2(context: Context, vi: Int) {
+    fun D2(context: Context, vi: Int, view: View) {
 
         val builde = Dialog(context)
         builde.setContentView(vi)
         builde.setTitle("Adel")
         builde.create()
         builde.show()
+        builde.Normal_No.setOnClickListener() {
+            builde.Normal_7amada.text = "He Say No!!"
+        }
+        builde.Normal_Yes.setOnClickListener() {
+            builde.Normal_7amada.text = "He Say Yes!!"
+        }
 
     }
 }
