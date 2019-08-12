@@ -17,7 +17,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.normal.*
 
 
-public class Dialogs(context: Context) : Dialog(context) {
+class Dialogs(context: Context) : Dialog(context) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.normal)
@@ -39,21 +39,21 @@ public class Dialogs(context: Context) : Dialog(context) {
         builder.setNeutralButton(NeutralButton) { dialog, wich -> }
         val dialog: AlertDialog = builder.create()
         dialog.show()
-    }//a
+    }
 
     fun D2(context: Context, vi: Int, view: View) {
 
         val builde = Dialog(context)
         builde.setContentView(vi)
         builde.setTitle("Adel")
-        builde.create()
-        builde.show()
-        builde.Normal_No.setOnClickListener() {
+        builde.Normal_No.setOnClickListener {
             builde.Normal_7amada.text = "He Say No!!"
         }
-        builde.Normal_Yes.setOnClickListener() {
+        builde.Normal_Yes.setOnClickListener {
             builde.Normal_7amada.text = "He Say Yes!!"
         }
+        builde.create()
+        builde.show()
 
     }
 }
