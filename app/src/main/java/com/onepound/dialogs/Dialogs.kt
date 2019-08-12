@@ -10,18 +10,13 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.ArrayAdapter
-import android.widget.ListAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.widget.ButtonBarLayout
+import androidx.core.view.get
 import kotlinx.android.synthetic.main.normal.*
 
 
 class Dialogs(context: Context) : Dialog(context) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.normal)
-    }
 
     fun D1(
         msg: String,
@@ -41,17 +36,24 @@ class Dialogs(context: Context) : Dialog(context) {
         dialog.show()
     }
 
-    fun D2(context: Context, vi: Int, view: View) {
-
+    fun D2(context: Context, vi: Int) {
         val builde = Dialog(context)
-        builde.setContentView(vi)
+        val But = Button(context)
+        var Weda = androidx.constraintlayout.widget.ConstraintLayout(context)
+        Weda.addView(But)
+        Weda.layout(100, 100, 100, 100)
+        But.text = "OkK"
+        But.height = 50
+        But.width = 50
+        builde.addContentView(Weda, ViewGroup.LayoutParams(500, 500))
+        //builde.setContentView(vi)
         builde.setTitle("Adel")
-        builde.Normal_No.setOnClickListener {
+        /*builde.Normal_No.setOnClickListener {
             builde.Normal_7amada.text = "He Say No!!"
         }
         builde.Normal_Yes.setOnClickListener {
             builde.Normal_7amada.text = "He Say Yes!!"
-        }
+        }*/
         builde.create()
         builde.show()
 
